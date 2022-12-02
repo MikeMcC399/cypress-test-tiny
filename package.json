@@ -9,12 +9,19 @@
     "cypress:version": "cypress version",
     "cypress:info": "cypress info",
     "cypress:cache:list": "cypress cache list",
-    "list-videos": "ls -l cypress/videos"
+    "list-videos": "ls -l cypress/videos",
+    "start": "node server.js",
+    "test": "run-p --race start cypress:run"
   },
   "keywords": [],
   "author": "Cypress-io",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
+    "cypress": "^14.5.1"
+  },
+  "dependencies": {
+    "express": "^5.1.0",
+    "npm-run-all2": "^8.0.4"
   },
   "repository": {
     "type": "git",

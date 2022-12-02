@@ -1,6 +1,12 @@
 /// <reference types="cypress" />
-describe('page', () => {
-  it('works', () => {
-    cy.visit('https://example.cypress.io')
+describe('encoding checks', () => {
+
+  it('plain', () => {
+    cy.visit('/plain', { timeout: 10000 })
   })
+
+  it('br', () => {
+    cy.visit('/br', { timeout: 10000 })
+  })
+
 })
