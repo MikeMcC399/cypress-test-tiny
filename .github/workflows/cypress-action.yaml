@@ -1,0 +1,22 @@
+name: Cypress Test with action
+on:
+  workflow_dispatch:
+
+jobs:
+  Cypress-Test-with-action:
+    runs-on: ubuntu-22.04
+    env:
+      NO_COLOR: true
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js 18 environment
+        uses: actions/setup-node@v3
+        with:
+          node-version: 'lts/hydrogen'
+
+      - name: Cypress run
+        uses: cypress-io/github-action@v5
+        with:
+          spec: cypress/e2e/spec.cy.js
