@@ -10,11 +10,16 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
+        
+      - name: Show default Node.js
+        run: node -v
 
       - name: Setup Node.js 18 environment
         uses: actions/setup-node@v3
         with:
           node-version: 'lts/hydrogen'
+      - name: Show selected Node.js
+        run: node -v
 
       - name: Cypress run
         uses: cypress-io/github-action@v5
