@@ -1,0 +1,24 @@
+name: Cypress Test native
+on:
+  workflow_dispatch:
+
+jobs:
+  Cypress-Test-native:
+    runs-on: ubuntu-24.04
+    env:
+      NO_COLOR: true
+      TERM: xterm
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js 22 environment
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: npm install
+        run: npm ci
+
+      - name: Cypress run
+        run: npx cypress run -s cypress/e2e/spec.cy.js
