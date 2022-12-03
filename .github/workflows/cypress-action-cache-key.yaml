@@ -1,0 +1,28 @@
+name: Cypress Test with action cache key
+on:
+  workflow_dispatch:
+
+jobs:
+  Cypress-Test-with-action-cache-key:
+    runs-on: ubuntu-22.04
+    env:
+      NO_COLOR: true
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        
+      - name: Show default Node.js
+        run: node -v
+
+      - name: Setup Node.js 18 environment
+        uses: actions/setup-node@v3
+        with:
+          node-version: 'lts/hydrogen'
+      - name: Show selected Node.js
+        run: node --version; npm --version; which -a node; echo $PATH
+
+      - name: Cypress run
+        uses: cypress-io/github-action@v5
+        with:
+          cache-key: node-v18-on-${{ runner.os }}-hash-${{ hashFiles('package-lock.json') }}
+          spec: cypress/e2e/spec.cy.js
