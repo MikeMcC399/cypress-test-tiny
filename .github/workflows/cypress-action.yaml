@@ -19,7 +19,7 @@ jobs:
         with:
           node-version: 'lts/hydrogen'
       - name: Show selected Node.js
-        run: node -v
+        run: node --version; npm --version; which -a node; echo $PATH
 
       - name: Cypress run
         uses: cypress-io/github-action@v5
