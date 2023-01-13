@@ -6,11 +6,12 @@ jobs:
   Cypress-Test-with-action:
     runs-on: ubuntu-22.04
     env:
+      DEBUG: '@cypress/github-action'
       NO_COLOR: true
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
-        
+
       - name: Show default Node.js
         run: node -v
 
