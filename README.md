@@ -1,14 +1,63 @@
-# cypress-test-tiny
+Issue:  https://github.com/cypress-io/github-action/issues/642
 
-> Tiny Cypress E2E test case
+Runner externals Node.js version v16.13.0 always used in GHA runs
 
-Build status | Name | Description
-:--- | :--- | :---
-[![CircleCI](https://circleci.com/gh/cypress-io/cypress-test-tiny.svg?style=svg)](https://circleci.com/gh/cypress-io/cypress-test-tiny) | CircleCI | Linux & Mac & Win 64
-[![Build status](https://ci.appveyor.com/api/projects/status/er7wpte7j00fsm8d/branch/master?svg=true)](https://ci.appveyor.com/project/cypress-io/cypress-test-tiny-fitqm/branch/master) | AppVeyor | Windows 32-bit
-[![Build status](https://ci.appveyor.com/api/projects/status/bpwo4jpue61xsbi5/branch/master?svg=true)](https://ci.appveyor.com/project/cypress-io/cypress-test-tiny/branch/master) | AppVeyor | Windows 64-bit
-[ ![Codeship Status for cypress-io/cypress-test-tiny](https://app.codeship.com/projects/98843020-d6d6-0135-402d-5207bc7a4d86/status?branch=master)](https://app.codeship.com/projects/263289) | Codeship Basic | Linux Docker
+## Description
 
-## Important
+When [github-action](https://github.com/cypress-io/github-action) is run, the version of Node.js which the Cypress log shows is being used (v16.13.0) is neither the installed version (18.13.0), nor the default version for the runner (v16.19.0).
 
-Note that this project **DOES NOT** include Cypress dependency in the [package.json](package.json). The reason for such omission is that we use this project to test every Cypress build and do not want to spend time installing `cypress@x.x.x` just to immediately install and test `cypress@y.y.y`. Which means when submitting pull requests with a bug report, please save the problematic version of Cypress in `package.json`. Simply run `npm install --save-dev cypress` or `npm i -D cypress@x.x.x` and commit the change before submitting a pull request.
+Cypress shows: v16.13.0 `(/home/runner/runners/2.300.2/externals/node16/bin/node)`
+[Default Node.js in runner ubuntu-22.04 runner](https://github.com/actions/runner-images/blob/main/images/linux/Ubuntu2204-Readme.md#language-and-runtime): v16.19.0
+
+Installed Node.js: 18.13.0 `Found in cache @ /opt/hostedtoolcache/node/18.13.0/x64`
+
+## Steps to reproduce
+
+Environment:
+GitHub runner: [ubuntu-22.04](https://github.com/actions/runner-images/blob/main/images/linux/Ubuntu2204-Readme.md)
+Node.js: lts/hydrogen (18.13.0)
+Cypress: 12.3.0
+github-action: v5.0.5
+
+Run action with following core instructions:
+
+```yaml
+    runs-on: ubuntu-22.04
+    env:
+      NO_COLOR: true
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      - name: Setup Node.js 18 environment
+        uses: actions/setup-node@v3
+        with:
+          node-version: 'lts/hydrogen'
+      - name: Cypress run
+        uses: cypress-io/github-action@v5
+        with:
+          spec: cypress/e2e/spec.cy.js
+```
+
+Note that the log shows
+
+```text
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Cypress:        12.3.0                                                                         │
+  │ Browser:        Electron 106 (headless)                                                        │
+  │ Node Version:   v16.13.0 (/home/runner/runners/2.300.2/externals/node16/bin/node)              │
+  │ Specs:          1 found (spec.cy.js)                                                           │
+  │ Searched:       cypress/e2e/spec.cy.js                                                         │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+```
+
+The log shows Node.js version v16.13.0 being used by Cypress, although v18.13.0 was installed before the `github-action` was called.
+
+Example action to reproduce
+- https://github.com/MikeMcC399/cypress-test-tiny/blob/node-test/.github/workflows/cypress-action.yaml
+
+Action log file
+- https://github.com/MikeMcC399/cypress-test-tiny/actions/workflows/cypress-action.yaml
+
+## Expectation
+
+The action should use the Node.js version installed by [actions/setup-node@v3](https://github.com/actions/setup-node) - in this case 18.13.0 - and not Node.js v16.13.0.
