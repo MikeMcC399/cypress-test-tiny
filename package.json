@@ -16,9 +16,6 @@
   "keywords": [],
   "author": "Gleb Bahmutov <gleb@cypress.io>",
   "license": "ISC",
-  "devDependencies": {
-    "ok-file": "1.5.2"
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/cypress-io/cypress-test-tiny.git"
