@@ -11,13 +11,9 @@
     "cypress:cache:list": "cypress cache list",
     "list-videos": "ls -l cypress/videos"
   },
-  "keywords": [],
-  "author": "Cypress-io",
-  "license": "ISC",
+  "author": "Mike McCready",
+  "license": "MIT",
   "devDependencies": {
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/cypress-io/cypress-test-tiny.git"
+    "cypress": "12.17.3"
   }
 }
