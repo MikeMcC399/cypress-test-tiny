@@ -1,11 +1,32 @@
-# cypress-test-tiny
+# `before` hook runs before every test in `describe` block instead of once
 
-> Tiny Cypress E2E test case
+Repo branch for issue https://github.com/cypress-io/cypress/issues/26073
 
-Build status | Name | Description
-:--- | :--- | :---
-[![CircleCI](https://dl.circleci.com/status-badge/img/gh/cypress-io/cypress-test-tiny/tree/master.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/cypress-io/cypress-test-tiny/tree/master) | CircleCI | Linux & Mac & Win 64
+## Repro code
 
-## Important
+```js
+/// <reference types="Cypress" />
+describe('template spec', () => {
+  before(() => {
+    cy.log('Cypress version: ' + Cypress.version);
+  });
+  it('first URL', () => {
+    cy.visit('https://example.cypress.io');
+  });
+  it('second URL', () => {
+    cy.visit('https://mochajs.org/');
+  });
+});
+```
 
-Note that this project **DOES NOT** include Cypress dependency in the [package.json](package.json). The reason for such omission is that we use this project to test every Cypress build and do not want to spend time installing `cypress@x.x.x` just to immediately install and test `cypress@y.y.y`. Which means when submitting pull requests with a bug report, please save the problematic version of Cypress in `package.json`. Simply run `npm install --save-dev cypress` or `npm i -D cypress@x.x.x` and commit the change before submitting a pull request.
+## Steps
+
+```bash
+git clone --branch repeated-before https://github.com/MikeMcC399/cypress-test-tiny
+cd cypress-test-tiny
+npm ci
+npx cypress open --e2e --browser electron
+```
+
+- select `visit-twice.cy.js` to run
+- expand log to see that `BEFORE ALL` is shown also for second URL
