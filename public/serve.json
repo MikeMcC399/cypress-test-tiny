@@ -1,0 +1,9 @@
+{
+  "redirects": [
+    {
+      "source": "/api/v1",
+      "destination": "/api/v2",
+      "type": 308
+    }
+  ]
+}
