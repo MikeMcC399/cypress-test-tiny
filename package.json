@@ -9,12 +9,17 @@
     "cypress:version": "cypress version",
     "cypress:info": "cypress info",
     "cypress:cache:list": "cypress cache list",
-    "list-videos": "ls -l cypress/videos"
+    "list-videos": "ls -l cypress/videos",
+    "start-server": "serve public",
+    "test": "start-server-and-test start-server http://localhost:3000 cypress:run"
   },
   "keywords": [],
   "author": "Cypress-io",
   "license": "ISC",
   "devDependencies": {
+    "cypress": "13.3.2",
+    "serve": "14.2.1",
+    "start-server-and-test": "2.0.1"
   },
   "repository": {
     "type": "git",

@@ -1,0 +1,80 @@
+
+> cypress-test-tiny@1.0.0 test
+> start-server-and-test start-server http://localhost:3000 cypress:run
+
+1: starting server using command "npm run start-server"
+and when url "[ 'http://localhost:3000' ]" is responding with HTTP status code 200
+running tests using command "npm run cypress:run"
+
+
+> cypress-test-tiny@1.0.0 start-server
+> serve public
+
+ INFO  Accepting connections at http://localhost:3000
+ HTTP  10/22/2023 10:47:50 AM 127.0.0.1 HEAD /
+ HTTP  10/22/2023 10:47:50 AM 127.0.0.1 Returned 200 in 10 ms
+
+> cypress-test-tiny@1.0.0 cypress:run
+> cypress run
+
+[STARTED] Task without title.
+[TITLE]  Verified Cypress!       /home/mike/.cache/Cypress/13.3.2/Cypress
+[SUCCESS]  Verified Cypress!       /home/mike/.cache/Cypress/13.3.2/Cypress
+
+================================================================================
+
+  (Run Starting)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Cypress:        13.3.2                                                                         │
+  │ Browser:        Electron 114 (headless)                                                        │
+  │ Node Version:   v20.8.1 (/home/mike/n/bin/node)                                                │
+  │ Specs:          1 found (spec.cy.js)                                                           │
+  │ Searched:       cypress/e2e/**/*.cy.{js,jsx,ts,tsx}                                            │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+                                                                                                    
+  Running:  spec.cy.js                                                                      (1 of 1)
+
+
+  cy.request redirect
+ HTTP  10/22/2023 10:48:13 AM 127.0.0.1 POST /api/v1
+ HTTP  10/22/2023 10:48:13 AM 127.0.0.1 Returned 308 in 1 ms
+ HTTP  10/22/2023 10:48:13 AM 127.0.0.1 GET /api/v2
+ HTTP  10/22/2023 10:48:13 AM 127.0.0.1 Returned 200 in 1 ms
+    ✓ request POST to v1 (123ms)
+
+
+  1 passing (151ms)
+
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        1                                                                                │
+  │ Passing:      1                                                                                │
+  │ Failing:      0                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  0                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     0 seconds                                                                        │
+  │ Spec Ran:     spec.cy.js                                                                       │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+
+================================================================================
+
+  (Run Finished)
+
+
+       Spec                                              Tests  Passing  Failing  Pending  Skipped  
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ ✔  spec.cy.js                               152ms        1        1        -        -        - │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+    ✔  All specs passed!                        152ms        1        1        -        -        -  
+
+
+ INFO  Gracefully shutting down. Please wait...
