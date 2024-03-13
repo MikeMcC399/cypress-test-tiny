@@ -6,7 +6,7 @@
 git clone --branch cypress-linting https://github.com/MikeMcC399/cypress-test-tiny
 cd cypress-test-tiny
 npm ci
-npm run lint
+npm run cypress:lint
 ```
 
 ## Setup
@@ -28,16 +28,14 @@ Select "Scaffold example specs"
 Select "Okay, I got it"
 Close the Cypress Launchpad
 
-### Prepare linting configuration
+### Linting installation
 
 ```shell
-npm install cypress eslint eslint-plugin-cypress -D
-npx cypress open
+npm install eslint eslint-plugin-cypress -D
 ```
 
-
 Follow the documentation in [cypress-io/eslint-plugin-cypress](https://github.com/cypress-io/eslint-plugin-cypress)
-Create an `.eslintrc.json` file to the `cypress` directory with the following contents:
+Create an `.eslintrc.json` file in the `cypress` directory with the following contents:
 
 ```json
 {
