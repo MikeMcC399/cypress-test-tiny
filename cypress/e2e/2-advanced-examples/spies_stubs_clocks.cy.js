@@ -74,6 +74,7 @@ context('Spies, Stubs, and Clock', () => {
     cy.clock(now)
     cy.visit('https://example.cypress.io/commands/spies-stubs-clocks')
     cy.get('#clock-div').click()
+    cy.get('#clock-div')
       .should('have.text', '1489449600')
   })
 
@@ -87,10 +88,12 @@ context('Spies, Stubs, and Clock', () => {
     cy.clock(now)
     cy.visit('https://example.cypress.io/commands/spies-stubs-clocks')
     cy.get('#tick-div').click()
+    cy.get('#tick-div')
       .should('have.text', '1489449600')
 
     cy.tick(10000) // 10 seconds passed
     cy.get('#tick-div').click()
+    cy.get('#tick-div')
       .should('have.text', '1489449610')
   })
 
