@@ -13,8 +13,9 @@
   },
   "keywords": [],
   "author": "Cypress-io",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
+    "cypress": "^13.6.6"
   },
   "repository": {
     "type": "git",
