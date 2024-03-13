@@ -1,4 +1,5 @@
-# Repro for Scaffolded example specs fail recommended Cypress linting
+# Scaffolded example specs fail recommended Cypress linting cypress/no-unnecessary-waiting
+https://github.com/cypress-io/cypress/issues/29131
 
 ## Repro steps
 
