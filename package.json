@@ -16,10 +16,10 @@
   "author": "Cypress-io",
   "license": "MIT",
   "devDependencies": {
-    "@stylistic/eslint-plugin-js": "^1.8.0",
-    "cypress": "^13.9.0",
+    "@stylistic/eslint-plugin-js": "^2.1.0",
+    "cypress": "^13.10.0",
     "eslint": "^8.57.0",
-    "eslint-plugin-cypress": "^3.1.1"
+    "eslint-plugin-cypress": "^3.2.0"
   },
   "repository": {
     "type": "git",
