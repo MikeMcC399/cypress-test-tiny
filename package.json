@@ -9,12 +9,17 @@
     "cypress:version": "cypress version",
     "cypress:info": "cypress info",
     "cypress:cache:list": "cypress cache list",
-    "list-videos": "ls -l cypress/videos"
+    "list-videos": "ls -l cypress/videos",
+    "test": "node ./src/index.js",
+    "test:debug": "cross-env DEBUG=cypress:server:run node ./src/index.js",
+    "test:debug2": "cross-env DEBUG=cypress:server:run cypress run"
   },
   "keywords": [],
   "author": "Cypress-io",
   "license": "ISC",
   "devDependencies": {
+    "cross-env": "^7.0.3",
+    "cypress": "^13.15.1"
   },
   "repository": {
     "type": "git",
