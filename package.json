@@ -16,8 +16,8 @@
   "author": "Cypress-io",
   "license": "MIT",
   "devDependencies": {
-    "cypress": "^13.16.1",
-    "typescript": "^5.7.2"
+    "cypress": "^13.17.0",
+    "typescript": "^5.7.3"
   },
   "repository": {
     "type": "git",
