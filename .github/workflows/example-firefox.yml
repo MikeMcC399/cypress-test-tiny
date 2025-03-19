@@ -22,3 +22,5 @@ jobs:
           do
             npx cypress run -b firefox
           done
+        env:
+          DEBUG: cypress:server:profilecleaner
