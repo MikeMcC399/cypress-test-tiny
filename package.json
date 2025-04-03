@@ -1,21 +1,16 @@
 {
-  "name": "cypress-test-tiny",
+  "name": "29627-mochawesome",
   "version": "1.0.0",
-  "description": "Small project for quickly testing Cypress.io test runner",
+  "private":"true",
   "scripts": {
-    "cypress:run": "cypress run",
-    "cypress:open": "cypress open",
-    "cypress:verify": "cypress verify",
-    "cypress:version": "cypress version",
-    "cypress:info": "cypress info",
-    "cypress:cache:list": "cypress cache list",
-    "list-videos": "ls -l cypress/videos"
+    "test": "cypress run --reporter mochawesome --reporter-options reportDir=\"cypress/results\",overwrite=false,html=false,json=true"
   },
-  "keywords": [],
-  "author": "Cypress-io",
-  "license": "ISC",
+  "author": "Mike McCready",
+  "license": "MIT",
+  "description": "Cypress test with Mochawesome reporter",
   "devDependencies": {
-    "cypress": "^15.3.0"
+    "cypress": "^15.3.0",
+    "mochawesome": "^7.1.3"
   },
   "repository": {
     "type": "git",
