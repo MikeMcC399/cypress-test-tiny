@@ -4,6 +4,7 @@
   "description": "Small project for quickly testing Cypress.io test runner",
   "scripts": {
     "cypress:run": "cypress run",
+    "cypress:run:firefox": "cypress run -b firefox",
     "cypress:open": "cypress open",
     "cypress:verify": "cypress verify",
     "cypress:version": "cypress version",
@@ -14,10 +15,11 @@
   "keywords": [],
   "author": "Cypress-io",
   "license": "ISC",
-  "devDependencies": {
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/cypress-io/cypress-test-tiny.git"
+  },
+  "dependencies": {
+    "cypress": "^14.3.3"
   }
 }
