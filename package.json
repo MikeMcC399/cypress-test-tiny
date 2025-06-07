@@ -17,7 +17,7 @@
   "author": "Cypress-io",
   "license": "ISC",
   "devDependencies": {
-    "cypress": "^14.2.0",
+    "cypress": "^14.4.1",
     "serve": "^14.2.4",
     "start-server-and-test": "^2.0.11"
   },
