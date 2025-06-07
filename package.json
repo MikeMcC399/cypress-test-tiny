@@ -1,7 +1,7 @@
 {
   "name": "29627-mochawesome",
   "version": "1.0.0",
-  "private":"true",
+  "private": "true",
   "scripts": {
     "test": "cypress run --reporter mochawesome --reporter-options reportDir=\"cypress/results\",overwrite=false,html=false,json=true"
   },
