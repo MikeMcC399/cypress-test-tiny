@@ -16,9 +16,9 @@
   "author": "Cypress-io",
   "license": "MIT",
   "devDependencies": {
-    "cypress": "^14.1.0",
-    "eslint": "^9.21.0",
-    "eslint-plugin-cypress": "^4.1.0"
+    "cypress": "^15.1.0",
+    "eslint": "^9.35.0",
+    "eslint-plugin-cypress": "^5.1.1"
   },
   "repository": {
     "type": "git",
