@@ -27,7 +27,7 @@ If a URL responds with HTTP 308 (Permanent Redirect) status code to a [@cypress/
 Execute
 
 ```bash
-git clone --branch RFC-9110 https://github.com/MikeMcC399/cypress-test-tiny
+git clone --branch 28058-RFC-9110 https://github.com/MikeMcC399/cypress-test-tiny
 cd cypress-test-tiny
 npm ci
 npm test
@@ -80,4 +80,4 @@ describe('cy.request redirect', () => {
     ✓ request POST to v1 (123ms)
 ```
 
-[rfc-9110.log](https://github.com/MikeMcC399/cypress-test-tiny/blob/RFC-9110/rfc-9110.log)
+[rfc-9110.log](https://github.com/MikeMcC399/cypress-test-tiny/blob/28058-RFC-9110/rfc-9110.log)
