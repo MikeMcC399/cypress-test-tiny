@@ -15,10 +15,10 @@
   "author": "Cypress-io",
   "license": "ISC",
   "devDependencies": {
-    "cypress": "^14.4.1"
+    "cypress": "^15.3.0"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/cypress-io/cypress-test-tiny.git"
+    "url": "git+https://github.com/cypress-io/cypress-test-tiny.git"
   }
 }

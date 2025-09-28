@@ -30,7 +30,7 @@ jobs:
   linux-test:
     docker:
       # find Docker image at https://github.com/cypress-io/cypress-docker-images
-      - image: cypress/base:18.16.1
+      - image: cypress/base:22.20.0
 
     working_directory: ~/repo
 
@@ -67,4 +67,3 @@ workflows:
           context: test-runner:commit-status-checks
       - mac-test:
           context: test-runner:commit-status-checks
-
