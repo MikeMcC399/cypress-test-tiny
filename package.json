@@ -9,16 +9,13 @@
     "cypress:version": "cypress version",
     "cypress:info": "cypress info",
     "cypress:cache:list": "cypress cache list",
-    "list-videos": "ls -l cypress/videos",
-    "cypress:lint": "eslint cypress"
+    "list-videos": "ls -l cypress/videos"
   },
   "keywords": [],
   "author": "Cypress-io",
   "license": "MIT",
   "devDependencies": {
-    "cypress": "^15.1.0",
-    "eslint": "^9.35.0",
-    "eslint-plugin-cypress": "^5.1.1"
+    "cypress": "^15.3.0"
   },
   "repository": {
     "type": "git",
