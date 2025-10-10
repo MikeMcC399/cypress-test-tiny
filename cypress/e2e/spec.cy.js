@@ -1,6 +1,3 @@
-/// <reference types="cypress" />
-describe('page', () => {
-  it('works', () => {
-    cy.visit('https://example.cypress.io')
-  })
-})
+it("show test failing", function () {
+  throw new Error("deliberate hard failure");
+});
