@@ -14,11 +14,11 @@
   "keywords": [],
   "author": "Cypress-io",
   "license": "ISC",
-  "devDependencies": {
-    "cypress": "^15.4.0"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/cypress-io/cypress-test-tiny.git"
+  },
+  "devDependencies": {
+    "cypress": "^15.4.0"
   }
 }
