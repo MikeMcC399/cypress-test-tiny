@@ -13,15 +13,15 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Show default Node.js
         run: node -v
 
-      - name: Setup Node.js 22 environment
-        uses: actions/setup-node@v4
+      - name: Setup Node.js 24 environment
+        uses: actions/setup-node@v6
         with:
-          node-version: '22'
+          node-version: 24
       - name: Show selected Node.js
         run: node --version; npm --version; which -a node; echo $PATH
 
@@ -39,15 +39,15 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Show default Node.js
         run: node -v
 
-      - name: Setup Node.js 22 environment
-        uses: actions/setup-node@v4
+      - name: Setup Node.js 24 environment
+        uses: actions/setup-node@v6
         with:
-          node-version: '22'
+          node-version: 24
       - name: Show selected Node.js
         run: node --version; npm --version; which -a node; echo $PATH
 
