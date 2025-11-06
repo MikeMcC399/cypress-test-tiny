@@ -15,7 +15,7 @@
   "author": "Cypress-io",
   "license": "MIT",
   "devDependencies": {
-    "cypress": "^15.3.0"
+    "cypress": "^15.6.0"
   },
   "repository": {
     "type": "git",
