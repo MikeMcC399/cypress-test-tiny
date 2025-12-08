@@ -20,6 +20,6 @@
     "url": "https://github.com/cypress-io/cypress-test-tiny.git"
   },
   "dependencies": {
-    "cypress": "^15.3.0"
+    "cypress": "^15.7.1"
   }
 }
