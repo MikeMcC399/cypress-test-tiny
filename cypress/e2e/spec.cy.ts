@@ -1,5 +1,5 @@
 /// <reference types="cypress" />
-import testData from '../fixtures/example.json'
+import exampleData from '../fixtures/example.json' with { type: 'json' }
 
 describe('page', () => {
   it('works', () => {
