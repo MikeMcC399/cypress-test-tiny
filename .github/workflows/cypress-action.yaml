@@ -13,7 +13,7 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
 
       - name: Show default Node.js
         run: node -v
@@ -28,7 +28,7 @@ jobs:
       - run: npm ci
 
       - name: Cypress run
-        uses: cypress-io/github-action@v6
+        uses: cypress-io/github-action@v7
         with:
           install-command: node -v
           build: node -v
@@ -39,7 +39,7 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
 
       - name: Show default Node.js
         run: node -v
@@ -52,6 +52,6 @@ jobs:
         run: node --version; npm --version; which -a node; echo $PATH
 
       - name: Cypress run
-        uses: cypress-io/github-action@v6
+        uses: cypress-io/github-action@v7
         with:
           command: node -v
