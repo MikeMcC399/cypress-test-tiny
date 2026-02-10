@@ -7,3 +7,15 @@ report/
 cypress/downloads
 cypress/screenshots
 cypress/videos
+
+# next.js
+/.next/
+/out/
+
+/.pnp
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions

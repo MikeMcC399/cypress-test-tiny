@@ -4,7 +4,15 @@ module.exports = defineConfig({
   allowCypressEnv: false,
   video: false,
   fixturesFolder: false,
+
   e2e: {
     supportFile: false,
+  },
+
+  component: {
+    devServer: {
+      framework: "next",
+      bundler: "webpack",
+    },
   },
 });
