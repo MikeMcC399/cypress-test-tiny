@@ -1,23 +1,22 @@
 {
-  "name": "cypress-test-tiny",
+  "name": "start-server-and-test-test",
   "version": "1.0.0",
-  "description": "Small project for quickly testing Cypress.io test runner",
+  "description": "Test start-server-and-test with Cypress",
+  "main": "index.js",
   "scripts": {
-    "cypress:run": "cypress run",
-    "cypress:open": "cypress open",
-    "cypress:verify": "cypress verify",
-    "cypress:version": "cypress version",
-    "cypress:info": "cypress info",
-    "cypress:cache:list": "cypress cache list",
-    "list-videos": "ls -l cypress/videos"
+    "start": "http-server -c-1 --silent",
+    "cy:run": "cypress run",
+    "test": "start-server-and-test start http://localhost:8080 cy:run",
+    "ci-1": "start-server-and-test 'http-server -c-1 --silent' 8080 'cypress run --spec cypress/e2e/spec.cy.js'",
+    "ci-2": "start-server-and-test 8080 'cypress run --spec cypress/e2e/spec.cy.js'",
+    "ci-3": "start-server-and-test 'http-server -c-1 --silent' 8080 'mocha e2e-spec.js'"
   },
-  "keywords": [],
-  "author": "Cypress-io",
-  "license": "ISC",
+  "author": "Mike McCready",
+  "license": "MIT",
+  "type": "commonjs",
   "devDependencies": {
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/cypress-io/cypress-test-tiny.git"
+    "cypress": "^15.13.0",
+    "http-server": "^14.1.1",
+    "start-server-and-test": "^3.0.0"
   }
 }

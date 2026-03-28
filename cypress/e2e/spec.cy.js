@@ -1,6 +1,6 @@
-/// <reference types="cypress" />
-describe('page', () => {
-  it('works', () => {
-    cy.visit('https://example.cypress.io')
+describe('template spec', () => {
+  it('check page title', () => {
+    cy.visit('/')
+    cy.get('h1').should('contain', 'Test page')
   })
 })
