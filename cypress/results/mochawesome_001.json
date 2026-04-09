@@ -1,0 +1,148 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 2,
+    "failures": -1,
+    "start": "2026-04-09T15:13:04.357Z",
+    "end": "2026-04-09T15:13:04.537Z",
+    "duration": 180,
+    "testsRegistered": 3,
+    "passPercent": 0,
+    "pendingPercent": 66.66666666666666,
+    "other": 2,
+    "hasOther": true,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "c52b8c4e-a22b-4428-8a0a-ffddb122a688",
+      "title": "",
+      "fullFile": "cypress/e2e/test-two-skips.cy.js",
+      "file": "cypress/e2e/test-two-skips.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "702e9c27-21fd-419f-92a2-04478a2fb047",
+          "title": "test",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "test1",
+              "fullTitle": "test test1",
+              "timedOut": null,
+              "duration": 0,
+              "state": "pending",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": true,
+              "context": null,
+              "code": "",
+              "err": {},
+              "uuid": "874d6fb2-e5ee-4c58-9e5b-a5647516983a",
+              "parentUUID": "702e9c27-21fd-419f-92a2-04478a2fb047",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "test2",
+              "fullTitle": "test test2",
+              "timedOut": null,
+              "duration": 0,
+              "state": "pending",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": true,
+              "context": null,
+              "code": "",
+              "err": {},
+              "uuid": "2b007e48-eac9-4fcb-b3c0-f046c91c6683",
+              "parentUUID": "702e9c27-21fd-419f-92a2-04478a2fb047",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "test3",
+              "fullTitle": "test test3",
+              "timedOut": null,
+              "duration": 123,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "throw new Error('This test case should fail');",
+              "err": {
+                "message": "Error: This test case should fail",
+                "estack": "Error: This test case should fail\n    at Context.eval (webpack://29627-mochawesome/./cypress/e2e/test-two-skips.cy.js:5:10)\n    at runnable.fn (http://localhost:38351/__cypress/runner/cypress_runner.js:146581:19)\n    at callFn (http://localhost:38351/__cypress/runner/cypress_runner.js:165745:21)\n    at Runnable.run (http://localhost:38351/__cypress/runner/cypress_runner.js:165732:7)\n    at <unknown> (http://localhost:38351/__cypress/runner/cypress_runner.js:171830:30)\n    at PassThroughHandlerContext.finallyHandler (http://localhost:38351/__cypress/runner/cypress_runner.js:4042:23)\n    at PassThroughHandlerContext.tryCatcher (http://localhost:38351/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (http://localhost:38351/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (http://localhost:38351/__cypress/runner/cypress_runner.js:1546:18)",
+                "diff": null
+              },
+              "uuid": "abcfc609-cada-4e86-99ab-f70f1ab625f9",
+              "parentUUID": "702e9c27-21fd-419f-92a2-04478a2fb047",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "abcfc609-cada-4e86-99ab-f70f1ab625f9"
+          ],
+          "pending": [
+            "874d6fb2-e5ee-4c58-9e5b-a5647516983a",
+            "2b007e48-eac9-4fcb-b3c0-f046c91c6683"
+          ],
+          "skipped": [],
+          "duration": 123,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/results",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}
