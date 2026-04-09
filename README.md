@@ -1,3 +1,5 @@
+Repro steps for issue https://github.com/cypress-io/eslint-plugin-cypress/issues/246
+
 ## Current behavior
 
 The following [API example for `.each()`](https://docs.cypress.io/api/commands/each) as shown on the documentation site under [DOM Elements](https://docs.cypress.io/api/commands/each#DOM-Elements)
