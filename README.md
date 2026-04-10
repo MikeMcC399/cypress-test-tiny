@@ -1,1 +1,1 @@
-https://github.com/MikeMcC399/cypress-test-tiny
+Single spec test
