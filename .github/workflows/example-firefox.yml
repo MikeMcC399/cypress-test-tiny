@@ -1,0 +1,19 @@
+name: example-firefox
+on:
+  workflow_dispatch:
+
+jobs:
+  firefox:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Show browser versions
+        run: npx cypress info
+
+      - name: Firefox run
+        run: npx cypress run -b firefox

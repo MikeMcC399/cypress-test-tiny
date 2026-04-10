@@ -1,0 +1,57 @@
+name: Cypress Test with action
+
+on:
+  workflow_dispatch:
+
+env:
+  DEBUG: '@cypress/github-action'
+  NO_COLOR: true
+
+jobs:
+  Cypress-Test-options:
+    runs-on: ubuntu-24.04
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Show default Node.js
+        run: node -v
+
+      - name: Setup Node.js 22 environment
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Show selected Node.js
+        run: node --version; npm --version; which -a node; echo $PATH
+
+      - run: npm ci
+
+      - name: Cypress run
+        uses: cypress-io/github-action@v6
+        with:
+          install-command: node -v
+          build: node -v
+          start: node -v
+
+  Cypress-Test-with-action:
+    runs-on: ubuntu-24.04
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Show default Node.js
+        run: node -v
+
+      - name: Setup Node.js 22 environment
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Show selected Node.js
+        run: node --version; npm --version; which -a node; echo $PATH
+
+      - name: Cypress run
+        uses: cypress-io/github-action@v6
+        with:
+          command: node -v
