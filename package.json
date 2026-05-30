@@ -4,6 +4,7 @@
   "description": "Small project for quickly testing Cypress.io test runner",
   "scripts": {
     "cypress:run": "cypress run",
+    "cypress:run:webkit": "cypress run --browser webkit",
     "cypress:open": "cypress open",
     "cypress:verify": "cypress verify",
     "cypress:version": "cypress version",
@@ -14,10 +15,12 @@
   "keywords": [],
   "author": "Cypress-io",
   "license": "ISC",
-  "devDependencies": {
-  },
   "repository": {
     "type": "git",
-    "url": "https://github.com/cypress-io/cypress-test-tiny.git"
+    "url": "git+https://github.com/cypress-io/cypress-test-tiny.git"
+  },
+  "devDependencies": {
+    "cypress": "^15.16.0",
+    "playwright-webkit": "^1.60.0"
   }
 }
