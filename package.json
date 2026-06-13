@@ -13,7 +13,8 @@
   },
   "keywords": [],
   "author": "Cypress-io",
-  "license": "ISC",
+  "license": "MIT",
+  "type": "commonjs",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/cypress-io/cypress-test-tiny.git"
