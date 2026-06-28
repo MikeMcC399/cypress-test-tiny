@@ -19,7 +19,11 @@
     "url": "git+https://github.com/cypress-io/cypress-test-tiny.git"
   },
   "devDependencies": {
-    "cypress": "^15.17.0",
-    "playwright-webkit": "^1.61.0"
+    "cypress": "^15.18.0",
+    "playwright-webkit": "^1.61.1"
+  },
+  "allowScripts": {
+    "cypress": true,
+    "playwright-webkit": true
   }
 }
