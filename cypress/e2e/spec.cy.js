@@ -1,5 +1,3 @@
-describe('template spec', () => {
-  it('passes', () => {
-    cy.visit('https://example.cypress.io')
-  })
+it('tests exec', () => {
+  cy.exec('echo 42')
 })
