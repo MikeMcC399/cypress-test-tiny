@@ -19,7 +19,7 @@
     "url": "git+https://github.com/cypress-io/cypress-test-tiny.git"
   },
   "devDependencies": {
-    "cypress": "^15.19.0"
+    "cypress": "^15.20.1"
   },
   "allowScripts": {
     "cypress": true
