@@ -17,8 +17,21 @@ jobs:
           command: 'npx cypress run --browser chrome'
           no_output_timeout: 5m
 
+  docker-browsers-test-chrome:
+    docker:
+      - image: cypress/browsers:latest
+    steps:
+      - checkout
+      - run:
+          name: Install dependencies
+          command: npm install
+      - run:
+          name: Run Cypress
+          command: 'npx cypress run --browser chrome'
+          no_output_timeout: 5m
+
 workflows:
-  linux-build:
+  linux-orb-build:
     jobs:
       - linux-test-chrome:
           name: linux-test-chrome-1
@@ -50,3 +63,36 @@ workflows:
           name: linux-test-chrome-10
           requires:
             - linux-test-chrome-9
+
+  linux-docker-build:
+    jobs:
+      - docker-browsers-test-chrome:
+          name: docker-browsers-test-chrome-1
+      - docker-browsers-test-chrome:
+          name: docker-browsers-test-chrome-2
+      - docker-browsers-test-chrome:
+          name: docker-browsers-test-chrome-3
+      - docker-browsers-test-chrome:
+          name: docker-browsers-test-chrome-4
+      - docker-browsers-test-chrome:
+          name: docker-browsers-test-chrome-5
+      - docker-browsers-test-chrome:
+          name: docker-browsers-test-chrome-6
+          requires:
+            - docker-browsers-test-chrome-5
+      - docker-browsers-test-chrome:
+          name: docker-browsers-test-chrome-7
+          requires:
+            - docker-browsers-test-chrome-6
+      - docker-browsers-test-chrome:
+          name: docker-browsers-test-chrome-8
+          requires:
+            - docker-browsers-test-chrome-7
+      - docker-browsers-test-chrome:
+          name: docker-browsers-test-chrome-9
+          requires:
+            - docker-browsers-test-chrome-8
+      - docker-browsers-test-chrome:
+          name: docker-browsers-test-chrome-10
+          requires:
+            - docker-browsers-test-chrome-9
