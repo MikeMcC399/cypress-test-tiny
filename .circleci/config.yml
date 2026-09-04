@@ -30,3 +30,23 @@ workflows:
           name: linux-test-chrome-4
       - linux-test-chrome:
           name: linux-test-chrome-5
+      - linux-test-chrome:
+          name: linux-test-chrome-6
+          requires:
+            - linux-test-chrome-5
+      - linux-test-chrome:
+          name: linux-test-chrome-7
+          requires:
+            - linux-test-chrome-6
+      - linux-test-chrome:
+          name: linux-test-chrome-8
+          requires:
+            - linux-test-chrome-7
+      - linux-test-chrome:
+          name: linux-test-chrome-9
+          requires:
+            - linux-test-chrome-8
+      - linux-test-chrome:
+          name: linux-test-chrome-10
+          requires:
+            - linux-test-chrome-9
