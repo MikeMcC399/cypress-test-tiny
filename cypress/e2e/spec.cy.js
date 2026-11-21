@@ -1,6 +1,6 @@
-/// <reference types="cypress" />
-describe('page', () => {
-  it('works', () => {
+describe('template spec', () => {
+  it('passes', () => {
     cy.visit('https://example.cypress.io')
+    cy.screenshot()
   })
 })
